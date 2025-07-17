@@ -1,0 +1,14 @@
+# running in fifo/src/
+read -formal fifo_pkg.sv
+read -formal sync_gray.sv
+read -formal fifo_mem.sv
+read -formal fifo_write_ctrl.sv
+read -formal fifo_read_ctrl.sv
+read -formal fifo_async.sv
+read -formal fifo_formal.sv
+prep -top fifo_formal
+
+hierarchy -smtcheck
+rename -witness
+write_jny -no-connections ../model/design.json
+write_rtlil ../model/design.il

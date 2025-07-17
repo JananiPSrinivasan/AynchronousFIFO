@@ -1,0 +1,205 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.55+36 (git sha1 9ab194679, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `design_smt2.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design_prep.il
+
+2. Executing HIERARCHY pass (managing design hierarchy).
+Attribute `top' found on module `fifo_formal'. Setting top module to fifo_formal.
+
+2.1. Analyzing design hierarchy..
+Top module:  \fifo_formal
+Used module:     $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async
+Used module:         $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011
+Used module:         $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100
+Used module:         $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011
+Used module:         $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem
+
+2.2. Analyzing design hierarchy..
+Top module:  \fifo_formal
+Used module:     $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async
+Used module:         $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011
+Used module:         $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100
+Used module:         $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011
+Used module:         $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem
+Removed 0 unused modules.
+Module fifo_formal directly or indirectly contains formal properties -> setting "keep" attribute.
+
+3. Executing FORMALFF pass.
+
+4. Executing DFFUNMAP pass (unmap clock enable and synchronous reset from FFs).
+
+5. Printing statistics.
+
+=== fifo_formal ===
+
+   Number of wires:                 16
+   Number of wire bits:             30
+   Number of public wires:          10
+   Number of public wire bits:      24
+   Number of ports:                  0
+   Number of port bits:              0
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 16
+     $anyseq                         5
+     $assume                         4
+     $logic_not                      2
+     $mux                            2
+     $not                            2
+     $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async      1
+
+=== $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100 ===
+
+   Number of wires:                 10
+   Number of wire bits:             31
+   Number of public wires:           7
+   Number of public wire bits:      22
+   Number of ports:                  4
+   Number of port bits:             10
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  8
+     $anyinit                        2
+     $assume                         1
+     $mux                            4
+     $not                            1
+
+=== $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011 ===
+
+   Number of wires:                 16
+   Number of wire bits:             40
+   Number of public wires:           9
+   Number of public wire bits:      23
+   Number of ports:                  7
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 12
+     $add                            1
+     $anyinit                        1
+     $assume                         1
+     $eq                             1
+     $logic_and                      1
+     $logic_not                      1
+     $mux                            3
+     $not                            2
+     $xor                            1
+
+=== $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011 ===
+
+   Number of wires:                 15
+   Number of wire bits:             38
+   Number of public wires:           9
+   Number of public wire bits:      23
+   Number of ports:                  7
+   Number of port bits:             15
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 11
+     $add                            1
+     $anyinit                        1
+     $assume                         1
+     $eq                             1
+     $logic_and                      1
+     $logic_not                      1
+     $mux                            3
+     $not                            1
+     $xor                            1
+
+=== $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem ===
+
+   Number of wires:                 14
+   Number of wire bits:             64
+   Number of public wires:           9
+   Number of public wire bits:      36
+   Number of ports:                  7
+   Number of port bits:             25
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  9
+     $anyinit                        1
+     $anyseq                         2
+     $assume                         1
+     $mem_v2                         1
+     $mux                            3
+     $not                            1
+
+=== $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async ===
+
+   Number of wires:                 18
+   Number of wire bits:             48
+   Number of public wires:          16
+   Number of public wire bits:      46
+   Number of ports:                 10
+   Number of port bits:             24
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                  7
+     $and                            1
+     $not                            1
+     $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem      1
+     $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011      1
+     $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011      1
+     $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100      2
+
+=== design hierarchy ===
+
+   fifo_formal                       1
+     $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async      1
+       $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem      1
+       $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011      1
+       $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011      1
+       $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100      2
+
+   Number of wires:                 99
+   Number of wire bits:            282
+   Number of public wires:          67
+   Number of public wire bits:     196
+   Number of ports:                 39
+   Number of port bits:             99
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 65
+     $add                            2
+     $and                            1
+     $anyinit                        7
+     $anyseq                         7
+     $assume                         9
+     $eq                             2
+     $logic_and                      2
+     $logic_not                      4
+     $mem_v2                         1
+     $mux                           19
+     $not                            9
+     $xor                            2
+
+6. Executing SMT2 backend.
+
+6.1. Executing BMUXMAP pass.
+
+6.2. Executing DEMUXMAP pass.
+Creating SMT-LIBv2 representation of module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem.
+Creating SMT-LIBv2 representation of module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.
+Creating SMT-LIBv2 representation of module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.
+Creating SMT-LIBv2 representation of module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100.
+Creating SMT-LIBv2 representation of module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async.
+Creating SMT-LIBv2 representation of module fifo_formal.
+
+End of script. Logfile hash: ab27a183fc, CPU: user 0.02s system 0.01s, MEM: 17.16 MB peak
+Yosys 0.55+36 (git sha1 9ab194679, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 85% 2x write_smt2 (0 sec), 9% 2x read_rtlil (0 sec), ...

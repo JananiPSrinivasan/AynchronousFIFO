@@ -1,0 +1,119 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.55+36 (git sha1 9ab194679, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `design_prep.ys' --
+
+1. Executing RTLIL frontend.
+Input filename: design.il
+
+2. Executing SCC pass (detecting logic loops).
+Found 0 SCCs in module fifo_formal.
+Found 0 SCCs in module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100.
+Found 0 SCCs in module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.
+Found 0 SCCs in module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.
+Found 0 SCCs in module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem.
+Found 0 SCCs in module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async.
+Found 0 SCCs.
+
+3. Executing SIMPLEMAP pass (map simple cells to gate primitives).
+
+4. Executing MEMORY_NORDFF pass (extracting $dff cells from memories).
+
+5. Executing ASYNC2SYNC pass.
+Replacing $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100.$procdff$95 ($adff): ARST=\rst_n, D=\d, Q=\stage1
+Replacing $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100.$procdff$90 ($adff): ARST=\rst_n, D=\stage1, Q=\q
+Replacing $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.$procdff$76 ($adff): ARST=\rst_n, D=$0\wr_bin_ptr[3:0], Q=\wr_bin_ptr
+Replacing $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.$procdff$81 ($adff): ARST=\rst_n, D=$0\rd_bin_ptr[3:0], Q=\rd_bin_ptr
+
+6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \fifo_formal..
+Finding unused cells or wires in module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem..
+Finding unused cells or wires in module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async..
+Removed 14 unused cells and 14 unused wires.
+<suppressed ~15 debug messages>
+
+7. Executing FORMALFF pass.
+
+8. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async..
+Finding unused cells or wires in module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem..
+Finding unused cells or wires in module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module \fifo_formal..
+Removed 12 unused cells and 12 unused wires.
+<suppressed ~17 debug messages>
+
+9. Executing CHECK pass (checking for obvious problems).
+Checking module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async...
+Checking module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem...
+Checking module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011...
+Checking module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011...
+Checking module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100...
+Checking module fifo_formal...
+Warning: Wire fifo_formal.\wr_clk is used but has no driver.
+Warning: Wire fifo_formal.\rd_clk is used but has no driver.
+Warning: Wire fifo_formal.\rd_en is used but has no driver.
+Warning: Wire fifo_formal.\wr_en is used but has no driver.
+Found and reported 4 problems.
+
+10. Executing SETUNDEF pass (replace undef values with defined constants).
+
+11. Executing OPT pass (performing simple optimizations).
+
+11.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async.
+Optimizing module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem.
+Optimizing module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.
+Optimizing module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011.
+Optimizing module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100.
+Optimizing module fifo_formal.
+
+11.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async'.
+Finding identical cells in module `$paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem'.
+Finding identical cells in module `$paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `$paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011'.
+Finding identical cells in module `$paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100'.
+Finding identical cells in module `\fifo_formal'.
+Removed a total of 0 cells.
+
+11.3. Executing OPT_DFF pass (perform DFF optimizations).
+
+11.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async..
+Finding unused cells or wires in module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem..
+Finding unused cells or wires in module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module \fifo_formal..
+Removed 0 unused cells and 4 unused wires.
+<suppressed ~1 debug messages>
+
+11.5. Finished fast OPT passes.
+
+12. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async..
+Finding unused cells or wires in module $paramod$c9b7e9f62618a82a135111476fe7fc90dbcdb2d0\fifo_mem..
+Finding unused cells or wires in module $paramod\fifo_read_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\fifo_write_ctrl\ADDR_WIDTH=s32'00000000000000000000000000000011..
+Finding unused cells or wires in module $paramod\sync_gray\WIDTH=s32'00000000000000000000000000000100..
+Finding unused cells or wires in module \fifo_formal..
+Removed 0 unused cells and 6 unused wires.
+<suppressed ~4 debug messages>
+
+13. Executing RTLIL backend.
+Output filename: ../model/design_prep.il
+
+Warnings: 4 unique messages, 4 total
+End of script. Logfile hash: 4203f97e93, CPU: user 0.02s system 0.00s, MEM: 18.00 MB peak
+Yosys 0.55+36 (git sha1 9ab194679, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 25% 4x opt_clean (0 sec), 15% 1x opt_expr (0 sec), ...
