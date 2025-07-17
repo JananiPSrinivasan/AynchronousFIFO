@@ -1,0 +1,25 @@
+[options]
+mode prove
+depth 50
+
+[engines]
+smtbmc
+
+[script]
+read -formal ../common/fifo_pkg.sv
+read -formal ../rtl/sync_gray.sv
+read -formal ../rtl/fifo_mem.sv
+read -formal ../rtl/fifo_write_ctrl.sv
+read -formal ../rtl/fifo_read_ctrl.sv
+read -formal ../rtl/fifo_async.sv
+read -formal fifo_formal.sv
+prep -top fifo_formal
+
+[files]
+../common/fifo_pkg.sv
+../rtl/sync_gray.sv
+../rtl/fifo_mem.sv
+../rtl/fifo_write_ctrl.sv
+../rtl/fifo_read_ctrl.sv
+../rtl/fifo_async.sv
+fifo_formal.sv
