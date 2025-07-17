@@ -10,11 +10,11 @@ module fifo_formal;
   logic [DATA_WIDTH-1:0] wr_data;
   logic [DATA_WIDTH-1:0] rd_data;
   logic full, empty;
-
+`ifndef VERILATOR
   // Clock generation
   always #5  wr_clk = ~wr_clk;  // 100 MHz
   always #8  rd_clk = ~rd_clk;  // 62.5 MHz
-
+`endif
   // DUT instantiation
 fifo_async #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH)) dut (
     .wr_clk(wr_clk),
@@ -29,7 +29,7 @@ fifo_async #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH)) dut (
     .rd_data(rd_data),
     .empty(empty)
   );
-
+`ifndef VERILATOR
   // Initial reset
   initial begin
     wr_rst_n = 0;
@@ -38,9 +38,11 @@ fifo_async #(.DATA_WIDTH(DATA_WIDTH), .ADDR_WIDTH(ADDR_WIDTH)) dut (
     wr_rst_n = 1;
     rd_rst_n = 1;
   end
-
+`endif
   // Symbolic input data (used by formal tools)
-  always_comb wr_data = $anyseq;
+  `ifndef VERILATOR 
+    always_comb wr_data = $anyseq;
+  `endif
 
   // Assumptions: never write when full or read when empty
   always_ff @(posedge wr_clk) begin

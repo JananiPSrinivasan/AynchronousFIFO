@@ -1,4 +1,4 @@
-module sync_gray(#parameter WIDTH=3)(
+module sync_gray #(parameter WIDTH=3)(
     input logic clk,
     input logic rst_n,
     input logic [WIDTH-1:0]d,

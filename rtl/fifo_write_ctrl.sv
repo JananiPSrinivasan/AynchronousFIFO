@@ -8,7 +8,7 @@
 */
 
 
-`include fifo_pkg.sv
+`include "fifo_pkg.sv"
 module fifo_write_ctrl #(parameter ADDR_WIDTH = fifo_pkg::ADDR_WIDTH )(
     input logic clk,
     input logic rst_n, // active-low 

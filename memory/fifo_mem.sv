@@ -1,8 +1,11 @@
 `include "fifo_pkg.sv"
 
-module fifo_mem #(parameter ADDR_WIDTH = fifo_pkg :: ADDR_WIDTH)(
+module fifo_mem #(
+  parameter ADDR_WIDTH = fifo_pkg :: ADDR_WIDTH,
+  parameter DATA_WIDTH = fifo_pkg :: DATA_WIDTH
+)(
     input logic wr_clk,
-    input logic wr_en;
+    input logic wr_en,
     input logic [ADDR_WIDTH-1:0]wr_addr,
     input logic [DATA_WIDTH-1:0]wr_data,
 

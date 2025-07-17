@@ -8,7 +8,7 @@
 */
 
 `include "fifo_pkg.sv"
-module #( parameter ADDR_WIDTH = fifo_pkg::ADDR_WIDTH)(
+module fifo_read_ctrl  #( parameter ADDR_WIDTH = fifo_pkg::ADDR_WIDTH)(
     input logic clk,
     input logic rst_n,
     input logic rd_en,

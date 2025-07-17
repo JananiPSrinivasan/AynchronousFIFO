@@ -36,7 +36,7 @@ module fifo_async #(parameter DATA_WIDTH = fifo_pkg :: DATA_WIDTH,
             );
             
             // Read Control Logic
-            fifo_read_ctrl #(.ADDR_WIDTH(ADDR_WIDTH)) read_ctrl();
+            fifo_read_ctrl #(.ADDR_WIDTH(ADDR_WIDTH)) read_ctrl(
                 .clk              (rd_clk),
                 .rst_n            (rd_rst_n),
                 .rd_en            (rd_en),
@@ -44,6 +44,7 @@ module fifo_async #(parameter DATA_WIDTH = fifo_pkg :: DATA_WIDTH,
                 .empty            (empty),
                 .rd_gray_ptr      (rd_gray_ptr),
                 .rd_addr          (rd_addr)
+	    );
 
             // Memory 
 
