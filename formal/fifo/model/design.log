@@ -154,12 +154,12 @@ Creating decoders for process `$paramod\sync_gray\WIDTH=s32'00000000000000000000
 Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:0$23'.
 Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:7$22'.
 Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:7$21'.
-Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:59$17'.
-Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:56$13'.
-Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:50$10'.
-     1/1: $assume$fifo_formal.sv:51$11_EN
-Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:46$7'.
-     1/1: $assume$fifo_formal.sv:47$8_EN
+Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:61$17'.
+Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:58$13'.
+Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:52$10'.
+     1/1: $assume$fifo_formal.sv:53$11_EN
+Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:48$7'.
+     1/1: $assume$fifo_formal.sv:49$8_EN
 Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:0$5'.
 Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:16$3'.
 Creating decoders for process `\fifo_formal.$proc$fifo_formal.sv:15$1'.
@@ -205,12 +205,12 @@ Removing empty process `$paramod\sync_gray\WIDTH=s32'000000000000000000000000000
 Removing empty process `fifo_formal.$proc$fifo_formal.sv:0$23'.
 Removing empty process `fifo_formal.$proc$fifo_formal.sv:7$22'.
 Removing empty process `fifo_formal.$proc$fifo_formal.sv:7$21'.
-Removing empty process `fifo_formal.$proc$fifo_formal.sv:59$17'.
-Removing empty process `fifo_formal.$proc$fifo_formal.sv:56$13'.
-Found and cleaned up 1 empty switch in `\fifo_formal.$proc$fifo_formal.sv:50$10'.
-Removing empty process `fifo_formal.$proc$fifo_formal.sv:50$10'.
-Found and cleaned up 1 empty switch in `\fifo_formal.$proc$fifo_formal.sv:46$7'.
-Removing empty process `fifo_formal.$proc$fifo_formal.sv:46$7'.
+Removing empty process `fifo_formal.$proc$fifo_formal.sv:61$17'.
+Removing empty process `fifo_formal.$proc$fifo_formal.sv:58$13'.
+Found and cleaned up 1 empty switch in `\fifo_formal.$proc$fifo_formal.sv:52$10'.
+Removing empty process `fifo_formal.$proc$fifo_formal.sv:52$10'.
+Found and cleaned up 1 empty switch in `\fifo_formal.$proc$fifo_formal.sv:48$7'.
+Removing empty process `fifo_formal.$proc$fifo_formal.sv:48$7'.
 Removing empty process `fifo_formal.$proc$fifo_formal.sv:0$5'.
 Removing empty process `fifo_formal.$proc$fifo_formal.sv:16$3'.
 Removing empty process `fifo_formal.$proc$fifo_formal.sv:15$1'.
@@ -645,6 +645,6 @@ Module fifo_formal directly or indirectly contains formal properties -> setting 
 Output filename: ../model/design.il
 
 Warnings: 4 unique messages, 8 total
-End of script. Logfile hash: 12e6a5d85b, CPU: user 0.08s system 0.01s, MEM: 19.41 MB peak
+End of script. Logfile hash: e3376d15c3, CPU: user 0.07s system 0.01s, MEM: 18.84 MB peak
 Yosys 0.55+36 (git sha1 9ab194679, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
-Time spent: 31% 6x opt_expr (0 sec), 16% 4x opt_merge (0 sec), ...
+Time spent: 30% 6x opt_expr (0 sec), 17% 4x opt_merge (0 sec), ...

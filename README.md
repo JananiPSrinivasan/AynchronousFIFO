@@ -1,20 +1,28 @@
-## Problem Statement
-Design a configurable FIFO buffer to handle streaming data from a high-speed sensor module to a slower processor interface. The FIFO must prevent data loss while ensuring efficient throughput.
+#  8 bit Asynchronous FIFO Buffer
 
-The sensor sends 8-bit data at 50 MHz, while the processor reads data at 25 MHz, with occasional stalls (reads only 80% of the time). Your task is to:
+##  Problem Statement: Bridging Asynchronous Worlds
 
-- Calculate the minimum FIFO depth required to prevent overflow during processor stalls.
-- Design controls and Synchronisation for the FIFO read/write interface.
-- Include full/empty detection, programmable thresholds, and overflow/underflow flags.
-- Verify the FIFO functionality using a testbench that models the sensor and processor behavior.
+Imagine a high-speed sensor transmitting valuable data at 50 MHz — far faster than the processor meant to consume it. The processor, operating at 25 MHz and prone to occasional stalls (only active 80% of the time), risks falling behind. Without an intelligent buffer, this mismatch leads to data overflow and system instability.
 
-## Solution
+To solve this, we need a **synchronized, reliable, and configurable FIFO buffer** that can:
+- Handle continuous high-speed input without losing data
+- Adapt to slower or intermittent read speeds
+- Safely transfer data between **asynchronous clock domains**
+- Detect and prevent overflow/underflow conditions
+- Be easily integrated into any new SoC, SPI, or UART design
+
+---
+
+## Solution Overview
 
 ### 1. FIFO Depth Calculation
-- Sensor rate: 50 MHz (1 write every 20 ns)
-- Processor reads at 25 MHz but only 80% of the time (1 read every 50 ns)
-- Required depth = 5 → Rounded up to **8** for Gray code convenience
-- `ADDR_WIDTH = 3` (for 2³ = 8 entries)
+
+| Parameter | Value |
+|----------|-------|
+| Sensor Write Rate | 50 MHz (1 write every 20 ns) |
+| Processor Effective Read Rate | 25 MHz × 80% = 1 read every 50 ns |
+| Required FIFO Depth | 5 → rounded up to **8** (for Gray code ease) |
+| Address Width | `ADDR_WIDTH = 3` (since 2³ = 8 entries) |
 
 ---
 
@@ -22,18 +30,20 @@ The sensor sends 8-bit data at 50 MHz, while the processor reads data at 25 MHz,
 
 | Module | Description |
 |--------|-------------|
-| `fifo_pkg.sv` | Parameter definitions for `DATA_WIDTH`, `ADDR_WIDTH` |
-| `fifo_mem.sv` | Dual-port memory with write/read clock separation |
-| `fifo_write_ctrl.sv` | Write pointer increment, Gray code conversion, `full` flag |
-| `fifo_read_ctrl.sv` | Read pointer increment, Gray code conversion, `empty` flag |
-| `sync_gray.sv` | Gray code synchronizer across clock domains |
-| `fifo_async.sv` | Top-level FIFO integrating all the above modules |
+| `fifo_pkg.sv` | Common parameter definitions (`DATA_WIDTH`, `ADDR_WIDTH`) |
+| `fifo_mem.sv` | Dual-port memory with independent read/write clocks |
+| `fifo_write_ctrl.sv` | Write pointer logic + full detection |
+| `fifo_read_ctrl.sv` | Read pointer logic + empty detection |
+| `sync_gray.sv` | Gray code synchronizer for pointer crossing |
+| `fifo_async.sv` | Top-level FIFO wrapper integrating all components |
 
 ---
 
 ### 3. Pointer Synchronization
-- Implemented **binary to Gray** conversion
-- Used **`sync_gray.sv`** for cross-domain pointer transfer
+
+- Binary → Gray code conversion
+- Used `sync_gray.sv` for 2-flop pointer synchronization
+- Avoided CDC issues through verified dual-clock handling
 
 ---
 
@@ -41,11 +51,18 @@ The sensor sends 8-bit data at 50 MHz, while the processor reads data at 25 MHz,
 
 | File | Purpose |
 |------|---------|
-| `fifo_formal.sv` | Formal wrapper with assumptions, assertions, and covers |
-| `fifo.sby` | SymbiYosys script to run formal proof |
-| Folder structure | `rtl/` for RTL, `formal/` for formal testbench, `common/` for shared pkg |
+| `fifo_formal.sv` | Contains formal assertions and coverage conditions |
+| `fifo.sby` | SymbiYosys script to run formal verification |
+| Folder Layout | `rtl/`, `memory/`, `common/`, `formal/` for separation of concerns |
 
-#### Formal Properties Checked
+#### Formal Properties Checked:
 - No writes when FIFO is `full`
 - No reads when FIFO is `empty`
-- Data can flow through FIFO (basic `cover`)
+- Covers prove FIFO is usable in live systems
+
+---
+
+#### To Add this repository to your project:
+
+```bash
+git submodule add https://github.com/JananiPSrinivasan/AynchronousFIFO.git ip/async-fifo

@@ -200,6 +200,6 @@ Creating SMT-LIBv2 representation of module $paramod\sync_gray\WIDTH=s32'0000000
 Creating SMT-LIBv2 representation of module $paramod$298d5a308775efaf8378187d61da520bff8a50d4\fifo_async.
 Creating SMT-LIBv2 representation of module fifo_formal.
 
-End of script. Logfile hash: ab27a183fc, CPU: user 0.02s system 0.01s, MEM: 17.16 MB peak
+End of script. Logfile hash: ab27a183fc, CPU: user 0.01s system 0.01s, MEM: 16.88 MB peak
 Yosys 0.55+36 (git sha1 9ab194679, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
-Time spent: 85% 2x write_smt2 (0 sec), 9% 2x read_rtlil (0 sec), ...
+Time spent: 78% 2x write_smt2 (0 sec), 13% 2x read_rtlil (0 sec), ...

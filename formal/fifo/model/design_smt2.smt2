@@ -427,7 +427,7 @@
 (declare-fun |fifo_formal#0| (|fifo_formal_s|) (_ BitVec 1)) ; \wr_en
 ; yosys-smt2-wire wr_en 1
 (define-fun |fifo_formal_n wr_en| ((state |fifo_formal_s|)) Bool (= ((_ extract 0 0) (|fifo_formal#0| state)) #b1))
-; yosys-smt2-anyseq fifo_formal#1 8 fifo_formal.sv:43.25-43.32
+; yosys-smt2-anyseq fifo_formal#1 8 fifo_formal.sv:44.27-44.34
 ; yosys-smt2-witness {"offset": 0, "path": ["\\wr_data"], "smtname": 1, "smtoffset": 0, "type": "seq", "width": 8}
 (declare-fun |fifo_formal#1| (|fifo_formal_s|) (_ BitVec 8)) ; \wr_data
 ; yosys-smt2-wire wr_data 8
@@ -469,14 +469,14 @@
 (define-fun |fifo_formal#9| ((state |fifo_formal_s|)) (_ BitVec 1) (bvnot (|fifo_formal#2| state))) ; $auto$rtlil.cc:2957:Not$176
 ; yosys-smt2-assume 1 $auto$formalff.cc:981:execute$177
 (define-fun |fifo_formal_u 1| ((state |fifo_formal_s|)) Bool (or (= ((_ extract 0 0) (|fifo_formal#9| state)) #b1) (not true))) ; $auto$formalff.cc:981:execute$177
-(define-fun |fifo_formal#10| ((state |fifo_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|fifo_formal#3| state)) #b1) false))) ; $logic_not$fifo_formal.sv:51$12_Y
-(define-fun |fifo_formal#11| ((state |fifo_formal_s|)) (_ BitVec 1) (ite (|fifo_formal#6| state) #b1 #b0)) ; $assume$fifo_formal.sv:51$11_EN
-; yosys-smt2-assume 2 _witness_.check_assume_fifo_formal_sv_51_11 fifo_formal.sv:51.16-51.31
-(define-fun |fifo_formal_u 2| ((state |fifo_formal_s|)) Bool (or (|fifo_formal#10| state) (not (= ((_ extract 0 0) (|fifo_formal#11| state)) #b1)))) ; _witness_.check_assume_fifo_formal_sv_51_11
-(define-fun |fifo_formal#12| ((state |fifo_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|fifo_formal#0| state)) #b1) false))) ; $logic_not$fifo_formal.sv:47$9_Y
-(define-fun |fifo_formal#13| ((state |fifo_formal_s|)) (_ BitVec 1) (ite (|fifo_formal#5| state) #b1 #b0)) ; $assume$fifo_formal.sv:47$8_EN
-; yosys-smt2-assume 3 _witness_.check_assume_fifo_formal_sv_47_8 fifo_formal.sv:47.15-47.30
-(define-fun |fifo_formal_u 3| ((state |fifo_formal_s|)) Bool (or (|fifo_formal#12| state) (not (= ((_ extract 0 0) (|fifo_formal#13| state)) #b1)))) ; _witness_.check_assume_fifo_formal_sv_47_8
+(define-fun |fifo_formal#10| ((state |fifo_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|fifo_formal#3| state)) #b1) false))) ; $logic_not$fifo_formal.sv:53$12_Y
+(define-fun |fifo_formal#11| ((state |fifo_formal_s|)) (_ BitVec 1) (ite (|fifo_formal#6| state) #b1 #b0)) ; $assume$fifo_formal.sv:53$11_EN
+; yosys-smt2-assume 2 _witness_.check_assume_fifo_formal_sv_53_11 fifo_formal.sv:53.16-53.31
+(define-fun |fifo_formal_u 2| ((state |fifo_formal_s|)) Bool (or (|fifo_formal#10| state) (not (= ((_ extract 0 0) (|fifo_formal#11| state)) #b1)))) ; _witness_.check_assume_fifo_formal_sv_53_11
+(define-fun |fifo_formal#12| ((state |fifo_formal_s|)) Bool (not (or  (= ((_ extract 0 0) (|fifo_formal#0| state)) #b1) false))) ; $logic_not$fifo_formal.sv:49$9_Y
+(define-fun |fifo_formal#13| ((state |fifo_formal_s|)) (_ BitVec 1) (ite (|fifo_formal#5| state) #b1 #b0)) ; $assume$fifo_formal.sv:49$8_EN
+; yosys-smt2-assume 3 _witness_.check_assume_fifo_formal_sv_49_8 fifo_formal.sv:49.15-49.30
+(define-fun |fifo_formal_u 3| ((state |fifo_formal_s|)) Bool (or (|fifo_formal#12| state) (not (= ((_ extract 0 0) (|fifo_formal#13| state)) #b1)))) ; _witness_.check_assume_fifo_formal_sv_49_8
 (define-fun |fifo_formal_a| ((state |fifo_formal_s|)) Bool 
   (|$paramod$298d5a308775efaf8378187d61da520bff8a50d4/fifo_async_a| (|fifo_formal_h dut| state))
 )

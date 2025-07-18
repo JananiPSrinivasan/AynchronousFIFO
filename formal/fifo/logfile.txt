@@ -1,142 +1,142 @@
-SBY 14:41:38 [fifo] Removing directory '/home/oneapi/AynchronousFIFO/formal/fifo'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/common/fifo_pkg.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_pkg.sv'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/sync_gray.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/sync_gray.sv'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/memory/fifo_mem.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_mem.sv'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/fifo_write_ctrl.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_write_ctrl.sv'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/fifo_read_ctrl.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_read_ctrl.sv'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/fifo_async.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_async.sv'.
-SBY 14:41:38 [fifo] Copy '/home/oneapi/AynchronousFIFO/formal/fifo_formal.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_formal.sv'.
-SBY 14:41:38 [fifo] engine_0: smtbmc z3
-SBY 14:41:38 [fifo] base: starting process "cd fifo/src; yosys -ql ../model/design.log ../model/design.ys"
-SBY 14:41:38 [fifo] base: Warning: Wire fifo_formal.\rd_en is used but has no driver.
-SBY 14:41:38 [fifo] base: Warning: Wire fifo_formal.\wr_en is used but has no driver.
-SBY 14:41:38 [fifo] base: Warning: Wire fifo_formal.\rd_clk is used but has no driver.
-SBY 14:41:38 [fifo] base: Warning: Wire fifo_formal.\wr_clk is used but has no driver.
-SBY 14:41:38 [fifo] base: finished (returncode=0)
-SBY 14:41:38 [fifo] prep: starting process "cd fifo/model; yosys -ql design_prep.log design_prep.ys"
-SBY 14:41:38 [fifo] prep: Warning: Wire fifo_formal.\wr_clk is used but has no driver.
-SBY 14:41:38 [fifo] prep: Warning: Wire fifo_formal.\rd_clk is used but has no driver.
-SBY 14:41:38 [fifo] prep: Warning: Wire fifo_formal.\rd_en is used but has no driver.
-SBY 14:41:38 [fifo] prep: Warning: Wire fifo_formal.\wr_en is used but has no driver.
-SBY 14:41:38 [fifo] prep: finished (returncode=0)
-SBY 14:41:38 [fifo] smt2: starting process "cd fifo/model; yosys -ql design_smt2.log design_smt2.ys"
-SBY 14:41:38 [fifo] smt2: finished (returncode=0)
-SBY 14:41:38 [fifo] engine_0.basecase: starting process "cd fifo; yosys-smtbmc -s z3 --presat --noprogress -t 50  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
-SBY 14:41:38 [fifo] engine_0.induction: starting process "cd fifo; yosys-smtbmc -s z3 --presat -i --noprogress -t 50  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
-SBY 14:41:38 [fifo] engine_0.induction: ##   0:00:00  Solver: z3
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Solver: z3
-SBY 14:41:38 [fifo] engine_0.induction: ##   0:00:00  Trying induction in step 50..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
-SBY 14:41:38 [fifo] engine_0.induction: ##   0:00:00  Temporal induction successful.
-SBY 14:41:38 [fifo] engine_0.induction: ##   0:00:00  Status: passed
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
-SBY 14:41:38 [fifo] engine_0.induction: finished (returncode=0)
-SBY 14:41:38 [fifo] engine_0.induction: Status returned by engine for induction: pass
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
-SBY 14:41:38 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 20..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 20..
-SBY 14:41:39 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 21..
-SBY 14:41:40 [fifo] engine_0.basecase: ##   0:00:01  Checking assertions in step 21..
-SBY 14:41:40 [fifo] engine_0.basecase: ##   0:00:01  Checking assumptions in step 22..
-SBY 14:41:40 [fifo] engine_0.basecase: ##   0:00:01  Checking assertions in step 22..
-SBY 14:41:40 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 23..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 23..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 24..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 24..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 25..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 25..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 26..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 26..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 27..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 27..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 28..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 28..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 29..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 29..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 30..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 30..
-SBY 14:41:41 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 31..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 31..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 32..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 32..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 33..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 33..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 34..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 34..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 35..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 35..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 36..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 36..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 37..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 37..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 38..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 38..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 39..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 39..
-SBY 14:41:46 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 40..
-SBY 14:41:47 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 40..
-SBY 14:41:47 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 41..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:11  Checking assertions in step 41..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:11  Checking assumptions in step 42..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:11  Checking assertions in step 42..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:11  Checking assumptions in step 43..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:11  Checking assertions in step 43..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:11  Checking assumptions in step 44..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 44..
-SBY 14:41:50 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 45..
-SBY 14:41:51 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 45..
-SBY 14:41:51 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 46..
-SBY 14:41:51 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 46..
-SBY 14:41:51 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 47..
-SBY 14:42:05 [fifo] engine_0.basecase: ##   0:00:26  Checking assertions in step 47..
-SBY 14:42:05 [fifo] engine_0.basecase: ##   0:00:26  Checking assumptions in step 48..
-SBY 14:42:06 [fifo] engine_0.basecase: ##   0:00:27  Checking assertions in step 48..
-SBY 14:42:06 [fifo] engine_0.basecase: ##   0:00:27  Checking assumptions in step 49..
-SBY 14:42:06 [fifo] engine_0.basecase: ##   0:00:27  Checking assertions in step 49..
-SBY 14:42:06 [fifo] engine_0.basecase: ##   0:00:27  Status: passed
-SBY 14:42:06 [fifo] engine_0.basecase: finished (returncode=0)
-SBY 14:42:06 [fifo] engine_0.basecase: Status returned by engine for basecase: pass
-SBY 14:42:06 [fifo] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:27 (27)
-SBY 14:42:06 [fifo] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:28 (28)
-SBY 14:42:06 [fifo] summary: engine_0 (smtbmc z3) returned pass for basecase
-SBY 14:42:06 [fifo] summary: engine_0 (smtbmc z3) returned pass for induction
-SBY 14:42:06 [fifo] summary: engine_0 did not produce any traces
-SBY 14:42:06 [fifo] summary: successful proof by k-induction.
-SBY 14:42:06 [fifo] DONE (PASS, rc=0)
+SBY 16:17:50 [fifo] Removing directory '/home/oneapi/AynchronousFIFO/formal/fifo'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/common/fifo_pkg.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_pkg.sv'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/sync_gray.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/sync_gray.sv'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/memory/fifo_mem.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_mem.sv'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/fifo_write_ctrl.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_write_ctrl.sv'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/fifo_read_ctrl.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_read_ctrl.sv'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/rtl/fifo_async.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_async.sv'.
+SBY 16:17:50 [fifo] Copy '/home/oneapi/AynchronousFIFO/formal/fifo_formal.sv' to '/home/oneapi/AynchronousFIFO/formal/fifo/src/fifo_formal.sv'.
+SBY 16:17:50 [fifo] engine_0: smtbmc z3
+SBY 16:17:50 [fifo] base: starting process "cd fifo/src; yosys -ql ../model/design.log ../model/design.ys"
+SBY 16:17:50 [fifo] base: Warning: Wire fifo_formal.\rd_en is used but has no driver.
+SBY 16:17:50 [fifo] base: Warning: Wire fifo_formal.\wr_en is used but has no driver.
+SBY 16:17:50 [fifo] base: Warning: Wire fifo_formal.\rd_clk is used but has no driver.
+SBY 16:17:50 [fifo] base: Warning: Wire fifo_formal.\wr_clk is used but has no driver.
+SBY 16:17:50 [fifo] base: finished (returncode=0)
+SBY 16:17:50 [fifo] prep: starting process "cd fifo/model; yosys -ql design_prep.log design_prep.ys"
+SBY 16:17:50 [fifo] prep: Warning: Wire fifo_formal.\wr_clk is used but has no driver.
+SBY 16:17:50 [fifo] prep: Warning: Wire fifo_formal.\rd_clk is used but has no driver.
+SBY 16:17:50 [fifo] prep: Warning: Wire fifo_formal.\rd_en is used but has no driver.
+SBY 16:17:50 [fifo] prep: Warning: Wire fifo_formal.\wr_en is used but has no driver.
+SBY 16:17:50 [fifo] prep: finished (returncode=0)
+SBY 16:17:50 [fifo] smt2: starting process "cd fifo/model; yosys -ql design_smt2.log design_smt2.ys"
+SBY 16:17:50 [fifo] smt2: finished (returncode=0)
+SBY 16:17:50 [fifo] engine_0.basecase: starting process "cd fifo; yosys-smtbmc -s z3 --presat --noprogress -t 50  --append 0 --dump-vcd engine_0/trace.vcd --dump-yw engine_0/trace.yw --dump-vlogtb engine_0/trace_tb.v --dump-smtc engine_0/trace.smtc model/design_smt2.smt2"
+SBY 16:17:50 [fifo] engine_0.induction: starting process "cd fifo; yosys-smtbmc -s z3 --presat -i --noprogress -t 50  --append 0 --dump-vcd engine_0/trace_induct.vcd --dump-yw engine_0/trace_induct.yw --dump-vlogtb engine_0/trace_induct_tb.v --dump-smtc engine_0/trace_induct.smtc model/design_smt2.smt2"
+SBY 16:17:50 [fifo] engine_0.induction: ##   0:00:00  Solver: z3
+SBY 16:17:50 [fifo] engine_0.induction: ##   0:00:00  Trying induction in step 50..
+SBY 16:17:50 [fifo] engine_0.induction: ##   0:00:00  Temporal induction successful.
+SBY 16:17:50 [fifo] engine_0.induction: ##   0:00:00  Status: passed
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Solver: z3
+SBY 16:17:50 [fifo] engine_0.induction: finished (returncode=0)
+SBY 16:17:50 [fifo] engine_0.induction: Status returned by engine for induction: pass
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 0..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 0..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 1..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 1..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 2..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 2..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 3..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 3..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 4..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 4..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 5..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 5..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 6..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 6..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 7..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 7..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 8..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 8..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 9..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 9..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 10..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 10..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 11..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 11..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 12..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 12..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 13..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 13..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 14..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 14..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 15..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 15..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 16..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 16..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 17..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 17..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 18..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 18..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 19..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 19..
+SBY 16:17:50 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 20..
+SBY 16:17:51 [fifo] engine_0.basecase: ##   0:00:00  Checking assertions in step 20..
+SBY 16:17:51 [fifo] engine_0.basecase: ##   0:00:00  Checking assumptions in step 21..
+SBY 16:17:51 [fifo] engine_0.basecase: ##   0:00:01  Checking assertions in step 21..
+SBY 16:17:51 [fifo] engine_0.basecase: ##   0:00:01  Checking assumptions in step 22..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 22..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 23..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 23..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 24..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 24..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 25..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 25..
+SBY 16:17:52 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 26..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 26..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 27..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 27..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 28..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 28..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 29..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assertions in step 29..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:02  Checking assumptions in step 30..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:03  Checking assertions in step 30..
+SBY 16:17:53 [fifo] engine_0.basecase: ##   0:00:03  Checking assumptions in step 31..
+SBY 16:17:57 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 31..
+SBY 16:17:57 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 32..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 32..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 33..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 33..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 34..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:07  Checking assertions in step 34..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:07  Checking assumptions in step 35..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 35..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 36..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 36..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 37..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 37..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 38..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 38..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 39..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 39..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 40..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assertions in step 40..
+SBY 16:17:58 [fifo] engine_0.basecase: ##   0:00:08  Checking assumptions in step 41..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:11  Checking assertions in step 41..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:11  Checking assumptions in step 42..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 42..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 43..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 43..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 44..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 44..
+SBY 16:18:02 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 45..
+SBY 16:18:03 [fifo] engine_0.basecase: ##   0:00:12  Checking assertions in step 45..
+SBY 16:18:03 [fifo] engine_0.basecase: ##   0:00:12  Checking assumptions in step 46..
+SBY 16:18:03 [fifo] engine_0.basecase: ##   0:00:13  Checking assertions in step 46..
+SBY 16:18:03 [fifo] engine_0.basecase: ##   0:00:13  Checking assumptions in step 47..
+SBY 16:18:17 [fifo] engine_0.basecase: ##   0:00:26  Checking assertions in step 47..
+SBY 16:18:17 [fifo] engine_0.basecase: ##   0:00:26  Checking assumptions in step 48..
+SBY 16:18:17 [fifo] engine_0.basecase: ##   0:00:27  Checking assertions in step 48..
+SBY 16:18:17 [fifo] engine_0.basecase: ##   0:00:27  Checking assumptions in step 49..
+SBY 16:18:17 [fifo] engine_0.basecase: ##   0:00:27  Checking assertions in step 49..
+SBY 16:18:17 [fifo] engine_0.basecase: ##   0:00:27  Status: passed
+SBY 16:18:17 [fifo] engine_0.basecase: finished (returncode=0)
+SBY 16:18:17 [fifo] engine_0.basecase: Status returned by engine for basecase: pass
+SBY 16:18:17 [fifo] summary: Elapsed clock time [H:MM:SS (secs)]: 0:00:27 (27)
+SBY 16:18:17 [fifo] summary: Elapsed process time [H:MM:SS (secs)]: 0:00:27 (27)
+SBY 16:18:17 [fifo] summary: engine_0 (smtbmc z3) returned pass for basecase
+SBY 16:18:17 [fifo] summary: engine_0 (smtbmc z3) returned pass for induction
+SBY 16:18:17 [fifo] summary: engine_0 did not produce any traces
+SBY 16:18:17 [fifo] summary: successful proof by k-induction.
+SBY 16:18:17 [fifo] DONE (PASS, rc=0)
