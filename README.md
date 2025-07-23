@@ -1,7 +1,6 @@
 #  8 bit Asynchronous FIFO Design and Verification
 
-##  Problem Statement: Bridging Asynchronous Worlds
-
+##  Problem Statement: 
 Imagine a high-speed sensor transmitting valuable data at 50 MHz — far faster than the processor meant to consume it. The processor, operating at 25 MHz and prone to occasional stalls (only active 80% of the time), risks falling behind. Without an intelligent buffer, this mismatch leads to data overflow and system instability.
 
 To solve this, we need a **synchronized, reliable, and configurable FIFO buffer** that can:
