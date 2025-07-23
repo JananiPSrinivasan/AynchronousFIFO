@@ -1,4 +1,4 @@
-#  8 bit Asynchronous FIFO Buffer
+#  8 bit Asynchronous FIFO Design and Verification
 
 ##  Problem Statement: Bridging Asynchronous Worlds
 
